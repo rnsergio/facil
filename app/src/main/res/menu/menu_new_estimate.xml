@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/action_save"
+          android:title="@string/save"
+          android:orderInCategory="100"
+          app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/action_email"
+        android:title="@string/email_estimate"
+        android:visible="false"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_download"
+        android:title="@string/download_pdf"
+        android:visible="false"
+        app:showAsAction="never" />
+
+    <item android:id="@+id/action_convert_to_invoice"
+          android:title="@string/convert_to_invoice"
+          app:showAsAction="never"
+          android:visible="false"/>
+
+    <item android:id="@+id/action_delete"
+          android:title="@string/delete"
+          app:showAsAction="never"
+          android:visible="false"/>
+</menu>
