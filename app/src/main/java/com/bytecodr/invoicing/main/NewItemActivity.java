@@ -140,19 +140,21 @@ public class NewItemActivity extends AppCompatActivity
                 try
                 {
                     api_parameter = new JSONObject();
-                    api_parameter.put("user_id", settings.getInt("id", 0));
+                    //api_parameter.put("user_id", settings.getInt("id", 0));
 
                     Object itemId = edit_name.getTag();
 
                     if (!itemId.equals("0"))
                     {
-                        api_parameter.put("id", itemId.toString());
+                        //api_parameter.put("id", itemId.toString());
                     }
 
-                    api_parameter.put("name", edit_name.getText().toString().trim());
+                    /*api_parameter.put("name", edit_name.getText().toString().trim());
                     api_parameter.put("rate", edit_rate.getText().toString().trim());
+                    api_parameter.put("description", edit_description.getText().toString().trim());*/
+                    api_parameter.put("name",edit_name.getText().toString().trim());
                     api_parameter.put("description", edit_description.getText().toString().trim());
-
+                    api_parameter.put("price",edit_rate.getText().toString().trim());
                     RunCreateItemService();
                 }
                 catch (JSONException ex)
@@ -252,7 +254,7 @@ public class NewItemActivity extends AppCompatActivity
         progressDialog.show();
 
         JsonObjectRequest postRequest = new JsonObjectRequest
-                (Request.Method.POST, Network.API_URL + "items/create", api_parameter, new Response.Listener<JSONObject>()
+                (Request.Method.POST, "https://app.alegra.com/api/v1/items\n", api_parameter, new Response.Listener<JSONObject>()
                 {
                     @Override
                     public void onResponse(JSONObject response)
@@ -305,7 +307,8 @@ public class NewItemActivity extends AppCompatActivity
             public Map<String, String> getHeaders() throws AuthFailureError
             {
                 Map<String, String> params = new HashMap<String, String>();
-                params.put("X-API-KEY", MainActivity.api_key);
+                //params.put("X-API-KEY", MainActivity.api_key);
+                params.put("Authorization", "Basic ci5zZXJnaW8uckBnbWFpbC5jb206YjkzNWYzYWE4MTViMGViOTk5MmE=");
                 return params;
             }
         };

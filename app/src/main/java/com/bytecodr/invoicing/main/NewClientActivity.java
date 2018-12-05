@@ -154,23 +154,25 @@ public class NewClientActivity extends AppCompatActivity
                 try
                 {
                     api_parameter = new JSONObject();
-                    api_parameter.put("user_id", settings.getInt("id", 0));
+                    //api_parameter.put("user_id", settings.getInt("id", 0));
 
                     Object itemId = edit_name.getTag();
 
                     if (!itemId.equals("0"))
                     {
-                        api_parameter.put("id", itemId.toString());
+                        //api_parameter.put("id", itemId.toString());
                     }
 
-                    api_parameter.put("name", edit_name.getText().toString().trim());
+                    /*api_parameter.put("name", edit_name.getText().toString().trim());
                     api_parameter.put("email", edit_email.getText().toString().trim());
                     api_parameter.put("address1", edit_address1.getText().toString().trim());
                     api_parameter.put("address2", edit_address2.getText().toString().trim());
                     api_parameter.put("city", edit_city.getText().toString().trim());
                     api_parameter.put("state", edit_state.getText().toString().trim());
                     api_parameter.put("postcode", edit_postcode.getText().toString().trim());
-                    api_parameter.put("country", edit_country.getText().toString().trim());
+                    api_parameter.put("country", edit_country.getText().toString().trim());*/
+                    api_parameter.put("name", edit_name.getText().toString().trim());
+                    //api_parameter.put("identification",edit_email.getText().toString().trim());
 
                     RunCreateClientService();
                 }
@@ -290,7 +292,7 @@ public class NewClientActivity extends AppCompatActivity
         progressDialog.show();
 
         JsonObjectRequest postRequest = new JsonObjectRequest
-                (Request.Method.POST, Network.API_URL + "clients/create", api_parameter, new Response.Listener<JSONObject>()
+                (Request.Method.POST, "https://app.alegra.com/api/v1/contacts\n", api_parameter, new Response.Listener<JSONObject>()
                 {
                     @Override
                     public void onResponse(JSONObject response)
@@ -343,7 +345,7 @@ public class NewClientActivity extends AppCompatActivity
             public Map<String, String> getHeaders() throws AuthFailureError
             {
                 Map<String, String> params = new HashMap<String, String>();
-                params.put("X-API-KEY", MainActivity.api_key);
+                params.put("Authorization", "Basic ci5zZXJnaW8uckBnbWFpbC5jb206YjkzNWYzYWE4MTViMGViOTk5MmE=");
                 return params;
             }
         };
