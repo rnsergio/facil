@@ -9,26 +9,26 @@
         <item
             android:id="@+id/nav_invoices"
             android:icon="@drawable/ic_menu_invoices"
-            android:title="Invoices" />
+            android:title="@string/title_activity_invoices" />
         <item
             android:id="@+id/nav_estimates"
             android:icon="@drawable/ic_menu_estimates"
-            android:title="Estimates" />
+            android:title="@string/title_activity_estimates" />
         <item
             android:id="@+id/nav_items"
             android:icon="@drawable/ic_menu_items"
-            android:title="Items" />
+            android:title="@string/title_activity_items" />
         <item
             android:id="@+id/nav_clients"
             android:icon="@drawable/ic_menu_clients"
-            android:title="Clients" />
+            android:title="@string/title_activity_clients" />
     </group>
 
     <group android:id="@+id/group_settings"  android:checkableBehavior="single">
         <item
             android:id="@+id/nav_settings"
             android:icon="@drawable/ic_menu_settings"
-            android:title="Settings" />
+            android:title="@string/title_activity_settings" />
 
     </group>
 </menu>

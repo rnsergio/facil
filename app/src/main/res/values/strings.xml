@@ -8,6 +8,8 @@
     <string name="title_activity_login">LoginActivity</string>
     <string name="sign_up_login">¿No esta registrado? <b><u>Registrate</u></b></string>
     <string name="title_activity_register">RegisterActivity</string>
+    <string name="title_current_month">Mes Actual</string>
+    <string name="title_previus_month">Mes Actual</string>
 
     <string name="progress_dialog">Cargando...</string>
     <string name="please_wait">Espere un Momento</string>
